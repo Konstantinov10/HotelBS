@@ -48,6 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Migrations\201712080655098_FirstM.cs" />
+    <Compile Include="Migrations\201712080655098_FirstM.Designer.cs">
+      <DependentUpon>201712080655098_FirstM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712080723302_SecondM.cs" />
+    <Compile Include="Migrations\201712080723302_SecondM.Designer.cs">
+      <DependentUpon>201712080723302_SecondM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Hotel.cs" />
     <Compile Include="Model\CreditCard.cs" />
@@ -60,6 +68,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712080655098_FirstM.resx">
+      <DependentUpon>201712080655098_FirstM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712080723302_SecondM.resx">
+      <DependentUpon>201712080723302_SecondM.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
