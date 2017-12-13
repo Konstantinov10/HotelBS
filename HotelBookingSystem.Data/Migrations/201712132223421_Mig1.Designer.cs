@@ -7,13 +7,13 @@ namespace HotelBookingSystem.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class FirstM : IMigrationMetadata
+    public sealed partial class Mig1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstM));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Mig1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712080655098_FirstM"; }
+            get { return "201712132223421_Mig1"; }
         }
         
         string IMigrationMetadata.Source

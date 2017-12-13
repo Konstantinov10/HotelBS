@@ -9,9 +9,10 @@ namespace HotelBookingSystem.Data
    public class ReservationInfo
     {
         public int ID { get; set; }
-        public List<Customer> Customers { get; set; }
-        public List<Hotel> Hotels { get; set; }
-        public DateTime CheckIn { get; set; }
-        public DateTime CheckOut { get; set; }
+        public Hotel HotelName { get; set; }
+        public string CheckIn { get; set; }
+        public string CheckOut { get; set; }
+        public Room RoomType { get; set; }
+
     }
 }

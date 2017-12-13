@@ -21,11 +21,16 @@ namespace HotelBookingSystem.UI
     /// </summary>
     public partial class MainPage : Page
     {
-        Repository _repository = new Repository();
+       
         public MainPage()
         {
             InitializeComponent();
-            dataGridCustomers.ItemsSource = _repository.Customers;
+          
+        }
+
+        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(Pages.BookingPage);
         }
     }
 }

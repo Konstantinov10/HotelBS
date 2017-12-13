@@ -1,0 +1,28 @@
+﻿<Page x:Class="HotelBookingSystem.UI.BookingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelBookingSystem.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500"
+      Title="BookingPage">
+
+    <Grid>
+        <DatePicker Name="datePickerCheckin" HorizontalAlignment="Left" Margin="44,72,0,0" VerticalAlignment="Top" Width="131"/>
+        <DatePicker Name="datePickerCheckout" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,101,0,0" Width="131"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="44,169,0,0" VerticalAlignment="Top" Width="131">
+            <ComboBoxItem x:Name="FamilyRoom" Content="Family" HorizontalAlignment="Left" Width="92" Selected="FamilyRoom_Selected" />
+            <ComboBoxItem x:Name="SingleRoom" Content="Single" HorizontalAlignment="Left" Width="92" Selected="SingleRoom_Selected"/>
+            <ComboBoxItem x:Name="LuxRoom1" Content="Lux" HorizontalAlignment="Left" Width="92" Selected="LuxRoom1_Selected" />
+            <ComboBoxItem x:Name="LuxRoom2" Content="Lux" HorizontalAlignment="Left" Width="92" Selected="LuxRoom2_Selected"/>
+        </ComboBox>
+        <Button x:Name="buttonPurchase" Content="Purchase" HorizontalAlignment="Left" Margin="415,270,0,0" VerticalAlignment="Top" Width="75" Click="buttonPurchase_Click"/>
+        <Button x:Name="buttonHotel1" Content="Button" HorizontalAlignment="Left" Margin="209,27,0,0" VerticalAlignment="Top" Width="75" Click="buttonHotel1_Click"/>
+        <Button x:Name="buttonHotel2" Content="Button" HorizontalAlignment="Left" Margin="357,27,0,0" VerticalAlignment="Top" Width="75" Click="buttonHotel2_Click"/>
+        <Button x:Name="buttonHotel3" Content="Button" HorizontalAlignment="Left" Margin="59,27,0,0" VerticalAlignment="Top" Width="75" Click="buttonHotel3_Click"/>
+        <ListBox x:Name="listBoxBooking" HorizontalAlignment="Left" Height="157" Margin="224,72,0,0" VerticalAlignment="Top" Width="241"/>
+        <Button x:Name="buttonDateApproved" Content="Button" HorizontalAlignment="Left" Margin="126,130,0,0" VerticalAlignment="Top" Width="49" Click="buttonDateApproved_Click"/>
+
+    </Grid>
+</Page>

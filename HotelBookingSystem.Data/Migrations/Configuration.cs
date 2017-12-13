@@ -54,32 +54,32 @@ namespace HotelBookingSystem.Data.Migrations
                     }
             };
 
-            ReservationInfo[] reservationinfos =
-                {
-                new ReservationInfo
-                {
-                 Customers = new List<Customer> {customers[0] },
-                 Hotels = new List<Hotel> {hotels[0] },
-                 CheckIn = new DateTime(2017,8,12),
-                 CheckOut = new DateTime(2017,9,12)
-                },
+            //ReservationInfo[] reservationinfos =
+            //    {
+            //    new ReservationInfo
+            //    {
+                
+            //     HotelName = {hotels[1]},
+            //     CheckIn = new DateTime(2017,8,12),
+            //     CheckOut = new DateTime(2017,9,12)
+            //    },
 
-                  new ReservationInfo
-                {
-                 Customers = new List<Customer> {customers[1] },
-                 Hotels = new List<Hotel> {hotels[0] },
-                 CheckIn = new DateTime(2017,8,12),
-                 CheckOut = new DateTime(2017,9,12)
-                },
+            //      new ReservationInfo
+            //    {
+                 
+            //     Hotels = new List<Hotel> {hotels[0] },
+            //     CheckIn = new DateTime(2017,8,12),
+            //     CheckOut = new DateTime(2017,9,12)
+            //    },
 
-                    new ReservationInfo
-                {
-                 Customers = new List<Customer> {customers[2] },
-                 Hotels = new List<Hotel> {hotels[0] },
-                 CheckIn = new DateTime(2017,8,10),
-                 CheckOut = new DateTime(2017,9,10)
-                },
-            };
+            //        new ReservationInfo
+            //    {
+                 
+            //     Hotels = new List<Hotel> {hotels[0] },
+            //     CheckIn = new DateTime(2017,8,10),
+            //     CheckOut = new DateTime(2017,9,10)
+            //    },
+            //};
 
             Payment[] payments =
            {
@@ -128,10 +128,10 @@ namespace HotelBookingSystem.Data.Migrations
               rooms
               );
 
-            context.ReservationInfos.AddOrUpdate(
-              p => p.ID,
-              reservationinfos
-              );
+            //context.ReservationInfos.AddOrUpdate(
+            //  p => p.ID,
+            //  reservationinfos
+            //  );
 
             context.Payments.AddOrUpdate(
             p => p.ID,

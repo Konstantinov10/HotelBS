@@ -3,7 +3,7 @@ namespace HotelBookingSystem.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstM : DbMigration
+    public partial class Mig1 : DbMigration
     {
         public override void Up()
         {
@@ -15,20 +15,8 @@ namespace HotelBookingSystem.Data.Migrations
                         CardNumber = c.Int(nullable: false),
                         CVV = c.Int(nullable: false),
                         Date = c.DateTime(nullable: false),
-                        FirstName_ID = c.Int(),
-                        IDCustomer_ID = c.Int(),
-                        IDPayment_ID = c.Int(),
-                        LastName_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Customers", t => t.FirstName_ID)
-                .ForeignKey("dbo.Customers", t => t.IDCustomer_ID)
-                .ForeignKey("dbo.Payments", t => t.IDPayment_ID)
-                .ForeignKey("dbo.Customers", t => t.LastName_ID)
-                .Index(t => t.FirstName_ID)
-                .Index(t => t.IDCustomer_ID)
-                .Index(t => t.IDPayment_ID)
-                .Index(t => t.LastName_ID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Customers",
@@ -38,10 +26,13 @@ namespace HotelBookingSystem.Data.Migrations
                         LastName = c.String(),
                         FirstName = c.String(),
                         Email = c.String(),
+                        CreditCard_ID = c.Int(),
                         Room_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.CreditCards", t => t.CreditCard_ID)
                 .ForeignKey("dbo.Rooms", t => t.Room_ID)
+                .Index(t => t.CreditCard_ID)
                 .Index(t => t.Room_ID);
             
             CreateTable(
@@ -50,8 +41,11 @@ namespace HotelBookingSystem.Data.Migrations
                     {
                         ID = c.Int(nullable: false, identity: true),
                         TotalSum = c.Double(nullable: false),
+                        CreditCard_ID = c.Int(),
                     })
-                .PrimaryKey(t => t.ID);
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.CreditCards", t => t.CreditCard_ID)
+                .Index(t => t.CreditCard_ID);
             
             CreateTable(
                 "dbo.Hotels",
@@ -84,16 +78,16 @@ namespace HotelBookingSystem.Data.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        CheckIn = c.DateTime(nullable: false),
-                        CheckOut = c.DateTime(nullable: false),
-                        IDCustomer_ID = c.Int(),
-                        IDHotel_ID = c.Int(),
+                        CheckIn = c.String(),
+                        CheckOut = c.String(),
+                        HotelName_ID = c.Int(),
+                        RoomType_ID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Customers", t => t.IDCustomer_ID)
-                .ForeignKey("dbo.Hotels", t => t.IDHotel_ID)
-                .Index(t => t.IDCustomer_ID)
-                .Index(t => t.IDHotel_ID);
+                .ForeignKey("dbo.Hotels", t => t.HotelName_ID)
+                .ForeignKey("dbo.Rooms", t => t.RoomType_ID)
+                .Index(t => t.HotelName_ID)
+                .Index(t => t.RoomType_ID);
             
             CreateTable(
                 "dbo.RoomHotels",
@@ -112,26 +106,22 @@ namespace HotelBookingSystem.Data.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.ReservationInfoes", "IDHotel_ID", "dbo.Hotels");
-            DropForeignKey("dbo.ReservationInfoes", "IDCustomer_ID", "dbo.Customers");
+            DropForeignKey("dbo.ReservationInfoes", "RoomType_ID", "dbo.Rooms");
+            DropForeignKey("dbo.ReservationInfoes", "HotelName_ID", "dbo.Hotels");
             DropForeignKey("dbo.RoomHotels", "Hotel_ID", "dbo.Hotels");
             DropForeignKey("dbo.RoomHotels", "Room_ID", "dbo.Rooms");
             DropForeignKey("dbo.Customers", "Room_ID", "dbo.Rooms");
             DropForeignKey("dbo.Hotels", "IDPay_ID", "dbo.Payments");
-            DropForeignKey("dbo.CreditCards", "LastName_ID", "dbo.Customers");
-            DropForeignKey("dbo.CreditCards", "IDPayment_ID", "dbo.Payments");
-            DropForeignKey("dbo.CreditCards", "IDCustomer_ID", "dbo.Customers");
-            DropForeignKey("dbo.CreditCards", "FirstName_ID", "dbo.Customers");
+            DropForeignKey("dbo.Payments", "CreditCard_ID", "dbo.CreditCards");
+            DropForeignKey("dbo.Customers", "CreditCard_ID", "dbo.CreditCards");
             DropIndex("dbo.RoomHotels", new[] { "Hotel_ID" });
             DropIndex("dbo.RoomHotels", new[] { "Room_ID" });
-            DropIndex("dbo.ReservationInfoes", new[] { "IDHotel_ID" });
-            DropIndex("dbo.ReservationInfoes", new[] { "IDCustomer_ID" });
+            DropIndex("dbo.ReservationInfoes", new[] { "RoomType_ID" });
+            DropIndex("dbo.ReservationInfoes", new[] { "HotelName_ID" });
             DropIndex("dbo.Hotels", new[] { "IDPay_ID" });
+            DropIndex("dbo.Payments", new[] { "CreditCard_ID" });
             DropIndex("dbo.Customers", new[] { "Room_ID" });
-            DropIndex("dbo.CreditCards", new[] { "LastName_ID" });
-            DropIndex("dbo.CreditCards", new[] { "IDPayment_ID" });
-            DropIndex("dbo.CreditCards", new[] { "IDCustomer_ID" });
-            DropIndex("dbo.CreditCards", new[] { "FirstName_ID" });
+            DropIndex("dbo.Customers", new[] { "CreditCard_ID" });
             DropTable("dbo.RoomHotels");
             DropTable("dbo.ReservationInfoes");
             DropTable("dbo.Rooms");

@@ -19,5 +19,16 @@ namespace HotelBookingSystem.UI
             }
         }
 
+        private static BookingPage _bookingPage = new BookingPage();
+
+
+        public static BookingPage BookingPage
+        {
+            get
+            {
+                return _bookingPage;
+            }
+        }
+
     }
 }
