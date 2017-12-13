@@ -12,18 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using HotelBookingSystem.Data;
 
 namespace HotelBookingSystem.UI
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        public MainWindow()
+        Repository _repository = new Repository();
+        public MainPage()
         {
             InitializeComponent();
-            frameMain.Navigate(new MainPage());
+            dataGridCustomers.ItemsSource = _repository.Customers;
         }
     }
 }

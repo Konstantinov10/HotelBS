@@ -35,15 +35,113 @@ namespace HotelBookingSystem.Data.Migrations
                     Number =1,
                     Status = "Free",
                     Price = 50,
-                   Customers = new List<Customer> { customers[0], customers[1] },
-                },
-               
+                   Customers = new List<Customer> {  },
+    },
+                    new Room{
+                    Type = "Single",
+                    Number =2,
+                    Status = "Busy",
+                    Price = 20,
+                   Customers = new List<Customer> { customers[2]},
+                    },
+
+                      new Room{
+                    Type = "Lux",
+                    Number =2,
+                    Status = "Busy",
+                    Price = 100,
+                   Customers = new List<Customer> { customers[0], customers[1]},
+                    }
             };
 
-            context.Customers.AddOrUpdate(
-               p => p.LastName,
-               customers
+            ReservationInfo[] reservationinfos =
+                {
+                new ReservationInfo
+                {
+                 Customers = new List<Customer> {customers[0] },
+                 Hotels = new List<Hotel> {hotels[0] },
+                 CheckIn = new DateTime(2017,8,12),
+                 CheckOut = new DateTime(2017,9,12)
+                },
+
+                  new ReservationInfo
+                {
+                 Customers = new List<Customer> {customers[1] },
+                 Hotels = new List<Hotel> {hotels[0] },
+                 CheckIn = new DateTime(2017,8,12),
+                 CheckOut = new DateTime(2017,9,12)
+                },
+
+                    new ReservationInfo
+                {
+                 Customers = new List<Customer> {customers[2] },
+                 Hotels = new List<Hotel> {hotels[0] },
+                 CheckIn = new DateTime(2017,8,10),
+                 CheckOut = new DateTime(2017,9,10)
+                },
+            };
+
+            Payment[] payments =
+           {
+                new Payment { TotalSum = 300 },
+                new Payment { TotalSum = 100 },
+                new Payment { TotalSum = 50 }
+            };
+
+            CreditCard[] creditcards =
+            {
+                new CreditCard
+                {
+                    CardNumber = 12345678,
+                    Customers = new List<Customer> { customers[0] },
+                    CVV = 123,
+                    Date = new DateTime(2021,10,12),
+                    Payments = new List<Payment> { payments[1] }
+                },
+
+
+                 new CreditCard
+                {
+                    CardNumber = 12345671,
+                    Customers = new List<Customer> { customers[2] },
+                    CVV = 123,
+                    Date = new DateTime(2020,10,12),
+                    Payments = new List<Payment> {payments[0] },
+                    
+                },
+            };
+
+           
+
+            context.Hotels.AddOrUpdate(
+               p => p.Name,
+               hotels
                );
+
+            context.Customers.AddOrUpdate(
+              p => p.LastName,
+              customers
+              );
+
+            context.Rooms.AddOrUpdate(
+              p => p.Number,
+              rooms
+              );
+
+            context.ReservationInfos.AddOrUpdate(
+              p => p.ID,
+              reservationinfos
+              );
+
+            context.Payments.AddOrUpdate(
+            p => p.ID,
+            payments
+            );
+
+            context.CreditCards.AddOrUpdate(
+            p => p.CardNumber,
+            creditcards
+            );
         }
     }
 }
