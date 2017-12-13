@@ -37,10 +37,10 @@ namespace HotelBookingSystem.UI
             for (int i = 0; i < spp.Length; i++)
                 spp[i] = listBoxBooking.Items[i].ToString();
 
-            resinfo.HotelName.Name = spp[0];
+            resinfo.HotelName = spp[0];
             resinfo.CheckIn = spp[1];
             resinfo.CheckOut = spp[2];
-            resinfo.RoomType.Type = spp[3];
+            resinfo.RoomType = spp[3];
 
             _repository.AddReservationInfo(resinfo);
         }

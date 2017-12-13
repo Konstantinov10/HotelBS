@@ -16,6 +16,7 @@ namespace HotelBookingSystem.Data
         public DbSet<Payment> Payments { get; set; }
         public DbSet<ReservationInfo> ReservationInfos { get; set; }
 
-        public Context() : base("loqalHBS") { }
+
+        public Context() : base("localsql") { }
     }
 }
