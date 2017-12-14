@@ -43,6 +43,8 @@ namespace HotelBookingSystem.UI
             resinfo.RoomType = spp[3];
 
             _repository.AddReservationInfo(resinfo);
+
+            NavigationService.Navigate(Pages.CreditCardPage);
         }
 
         private void buttonHotel3_Click(object sender, RoutedEventArgs e)
