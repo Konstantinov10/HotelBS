@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelBookingSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,22 @@ namespace HotelBookingSystem.UI
     /// </summary>
     public partial class CreditCardPage : Page
     {
+        CreditCardRepository _repository = new CreditCardRepository();
         public CreditCardPage()
         {
             InitializeComponent();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           CreditCard creditCard = new CreditCard();
+            creditCard.CardNumber = textBoxCardNum.Text;
+            creditCard.CardHolder = textBoxCardHolder.Text;
+            creditCard.Date = textBoxCardDate.Text;
+            creditCard.CVV = textBoxCardCVV.Text;
+
+            _repository.AddCreditCard(creditCard);
         }
     }
 }

@@ -17,6 +17,6 @@ namespace HotelBookingSystem.Data
         public DbSet<ReservationInfo> ReservationInfos { get; set; }
 
 
-        public Context() : base("localsql") { }
+        public Context() : base("HBS.db") { }
     }
 }

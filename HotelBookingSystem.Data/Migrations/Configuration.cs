@@ -88,28 +88,28 @@ namespace HotelBookingSystem.Data.Migrations
                 new Payment { TotalSum = 50 }
             };
 
-            CreditCard[] creditcards =
-            {
-                new CreditCard
-                {
-                    CardNumber = 12345678,
-                    Customers = new List<Customer> { customers[0] },
-                    CVV = 123,
-                    Date = new DateTime(2021,10,12),
-                    Payments = new List<Payment> { payments[1] }
-                },
+            //CreditCard[] creditcards =
+            //{
+            //    new CreditCard
+            //    {
+            //        CardNumber = 12345678,
+            //        Customers = new List<Customer> { customers[0] },
+            //        CVV = 123,
+            //        Date = new DateTime(2021,10,12),
+            //        Payments = new List<Payment> { payments[1] }
+            //    },
 
 
-                 new CreditCard
-                {
-                    CardNumber = 12345671,
-                    Customers = new List<Customer> { customers[2] },
-                    CVV = 123,
-                    Date = new DateTime(2020,10,12),
-                    Payments = new List<Payment> {payments[0] },
+            //     new CreditCard
+            //    {
+            //        CardNumber = 12345671,
+            //        Customers = new List<Customer> { customers[2] },
+            //        CVV = 123,
+            //        Date = new DateTime(2020,10,12),
+            //        Payments = new List<Payment> {payments[0] },
                     
-                },
-            };
+            //    },
+            //};
 
            
 
@@ -138,10 +138,10 @@ namespace HotelBookingSystem.Data.Migrations
             payments
             );
 
-            context.CreditCards.AddOrUpdate(
-            p => p.CardNumber,
-            creditcards
-            );
+            //context.CreditCards.AddOrUpdate(
+            //p => p.CardNumber,
+            //creditcards
+            //);
         }
     }
 }

@@ -9,10 +9,10 @@ namespace HotelBookingSystem.Data
     public class CreditCard
     {
         public int ID { get; set; }
-        public int CardNumber { get; set; }
-        public List <Customer> Customers { get; set; }
-        public int CVV { get; set; }
-        public DateTime Date { get; set; }
+        public string CardNumber { get; set; }
+        public string CardHolder { get; set; }
+        public string CVV { get; set; }
+        public string Date { get; set; }
         public List<Payment> Payments { get; set; }
     }
 }

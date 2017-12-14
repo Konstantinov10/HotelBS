@@ -13,7 +13,7 @@ namespace HotelBookingSystem.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712132223421_Mig1"; }
+            get { return "201712141649481_Mig1"; }
         }
         
         string IMigrationMetadata.Source

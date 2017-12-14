@@ -29,8 +29,15 @@ namespace HotelBookingSystem.UI
             
         }
 
+        private void RefreshListBox()
+        {
+            listBoxBooking.Items.Clear();
+        }
+
         private void buttonPurchase_Click(object sender, RoutedEventArgs e)
         {
+          
+
             ReservationInfo resinfo = new ReservationInfo();
 
             string[] spp = new string[listBoxBooking.Items.Count];
@@ -45,22 +52,28 @@ namespace HotelBookingSystem.UI
             _repository.AddReservationInfo(resinfo);
 
             NavigationService.Navigate(Pages.CreditCardPage);
+
         }
 
         private void buttonHotel3_Click(object sender, RoutedEventArgs e)
         {
-         
-                listBoxBooking.Items.Add("Hilton Dubai");
+            RefreshListBox();
+
+            listBoxBooking.Items.Add("Hilton Dubai");
 
         }
 
         private void buttonHotel1_Click(object sender, RoutedEventArgs e)
         {
+            RefreshListBox();
+
             listBoxBooking.Items.Add("Feduk Budapest");
         }
 
         private void buttonHotel2_Click(object sender, RoutedEventArgs e)
         {
+            RefreshListBox();
+
             listBoxBooking.Items.Add("Mariott Madrid");
         }
 

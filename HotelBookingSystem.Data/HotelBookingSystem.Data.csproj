@@ -48,11 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Repository\CreditCardRepository.cs" />
-    <Compile Include="Migrations\201712132223421_Mig1.cs" />
-    <Compile Include="Migrations\201712132223421_Mig1.Designer.cs">
-      <DependentUpon>201712132223421_Mig1.cs</DependentUpon>
+    <Compile Include="Migrations\201712141649481_Mig1.cs" />
+    <Compile Include="Migrations\201712141649481_Mig1.Designer.cs">
+      <DependentUpon>201712141649481_Mig1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712141722476_Mig2.cs" />
+    <Compile Include="Migrations\201712141722476_Mig2.Designer.cs">
+      <DependentUpon>201712141722476_Mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\CreditCardRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Hotel.cs" />
     <Compile Include="Model\CreditCard.cs" />
@@ -68,8 +72,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712132223421_Mig1.resx">
-      <DependentUpon>201712132223421_Mig1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712141649481_Mig1.resx">
+      <DependentUpon>201712141649481_Mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141722476_Mig2.resx">
+      <DependentUpon>201712141722476_Mig2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

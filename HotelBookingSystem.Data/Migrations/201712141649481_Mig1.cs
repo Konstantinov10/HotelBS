@@ -78,16 +78,12 @@ namespace HotelBookingSystem.Data.Migrations
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
+                        HotelName = c.String(),
                         CheckIn = c.String(),
                         CheckOut = c.String(),
-                        HotelName_ID = c.Int(),
-                        RoomType_ID = c.Int(),
+                        RoomType = c.String(),
                     })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Hotels", t => t.HotelName_ID)
-                .ForeignKey("dbo.Rooms", t => t.RoomType_ID)
-                .Index(t => t.HotelName_ID)
-                .Index(t => t.RoomType_ID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.RoomHotels",
@@ -106,8 +102,6 @@ namespace HotelBookingSystem.Data.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.ReservationInfoes", "RoomType_ID", "dbo.Rooms");
-            DropForeignKey("dbo.ReservationInfoes", "HotelName_ID", "dbo.Hotels");
             DropForeignKey("dbo.RoomHotels", "Hotel_ID", "dbo.Hotels");
             DropForeignKey("dbo.RoomHotels", "Room_ID", "dbo.Rooms");
             DropForeignKey("dbo.Customers", "Room_ID", "dbo.Rooms");
@@ -116,8 +110,6 @@ namespace HotelBookingSystem.Data.Migrations
             DropForeignKey("dbo.Customers", "CreditCard_ID", "dbo.CreditCards");
             DropIndex("dbo.RoomHotels", new[] { "Hotel_ID" });
             DropIndex("dbo.RoomHotels", new[] { "Room_ID" });
-            DropIndex("dbo.ReservationInfoes", new[] { "RoomType_ID" });
-            DropIndex("dbo.ReservationInfoes", new[] { "HotelName_ID" });
             DropIndex("dbo.Hotels", new[] { "IDPay_ID" });
             DropIndex("dbo.Payments", new[] { "CreditCard_ID" });
             DropIndex("dbo.Customers", new[] { "Room_ID" });
