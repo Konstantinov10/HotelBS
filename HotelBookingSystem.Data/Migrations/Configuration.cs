@@ -31,23 +31,20 @@ namespace HotelBookingSystem.Data.Migrations
             Room[] rooms =
          {
                 new Room{
-                    Type = "Family",
-                    Number =1,
+                    Type = "Family",                   
                     Status = "Free",
                     Price = 50,
                    Customers = new List<Customer> {  },
     },
                     new Room{
-                    Type = "Single",
-                    Number =2,
+                    Type = "Single",                    
                     Status = "Busy",
                     Price = 20,
                    Customers = new List<Customer> { customers[2]},
                     },
 
                       new Room{
-                    Type = "Lux",
-                    Number =2,
+                    Type = "Lux",                   
                     Status = "Busy",
                     Price = 100,
                    Customers = new List<Customer> { customers[0], customers[1]},
@@ -124,7 +121,7 @@ namespace HotelBookingSystem.Data.Migrations
               );
 
             context.Rooms.AddOrUpdate(
-              p => p.Number,
+              p => p.ID,
               rooms
               );
 
