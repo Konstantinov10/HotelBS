@@ -53,6 +53,8 @@ namespace HotelBookingSystem.UI
 
             NavigationService.Navigate(Pages.CreditCardPage);
 
+            RefreshListBox();
+
         }
 
         private void buttonHotel3_Click(object sender, RoutedEventArgs e)
@@ -84,6 +86,18 @@ namespace HotelBookingSystem.UI
 
         private void buttonDateApproved_Click(object sender, RoutedEventArgs e)
         {
+
+            //string[] spp = new string[listBoxBooking.Items.Count];
+            //for (int i = 0; i < spp.Length; i++)
+            //    spp[i] = listBoxBooking.Items[i].ToString();
+
+            //if(spp[1]!=null && spp[2]!=null)
+            //{
+            //    spp[1] = null;
+            //    spp[2] = null;
+            //    RefreshListBox();
+            //}
+
             long time = 0;
 
             DateTime dt1 = new DateTime();
@@ -120,6 +134,9 @@ namespace HotelBookingSystem.UI
 
             }
 
+            datePickerCheckin.Text=null;
+            datePickerCheckout.Text = null;
+            
         }
 
         private void FamilyRoom_Selected(object sender, RoutedEventArgs e)
@@ -159,6 +176,6 @@ namespace HotelBookingSystem.UI
         {          
         }
     }
-        }
+}
     
 

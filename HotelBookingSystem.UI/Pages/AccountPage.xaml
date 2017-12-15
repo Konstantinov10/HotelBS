@@ -1,0 +1,18 @@
+﻿<Page x:Class="HotelBookingSystem.UI.AccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelBookingSystem.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="AccountPage">
+
+    <Grid>
+        <DataGrid x:Name="dataGridOrders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="216"/>
+        <TextBlock x:Name="textBlockFirstName" HorizontalAlignment="Left" Margin="232,21,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlockLastName" HorizontalAlignment="Left" Margin="232,50,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlockEmail" HorizontalAlignment="Left" Margin="232,78,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

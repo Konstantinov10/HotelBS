@@ -40,5 +40,28 @@ namespace HotelBookingSystem.UI
                 return _creditCardPage;
             }
         }
+
+        private static RegistrationPage _registrationPage = new RegistrationPage();
+
+
+        public static RegistrationPage RegistrationPage
+        {
+            get
+            {
+                return _registrationPage;
+            }
+        }
+
+
+        private static AccountPage _accountPage = new AccountPage();
+
+
+        public static AccountPage AccountPage
+        {
+            get
+            {
+                return _accountPage;
+            }
+        }
     }
 }

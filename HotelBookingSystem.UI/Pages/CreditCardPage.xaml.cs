@@ -37,6 +37,9 @@ namespace HotelBookingSystem.UI
             creditCard.CVV = textBoxCardCVV.Text;
 
             _repository.AddCreditCard(creditCard);
+           
+            NavigationService.Navigate(Pages.BookingPage);
+            
         }
     }
 }

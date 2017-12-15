@@ -21,16 +21,49 @@ namespace HotelBookingSystem.UI
     /// </summary>
     public partial class MainPage : Page
     {
-       
         public MainPage()
         {
+            
             InitializeComponent();
-          
         }
+        CustomerRepository _repository = new CustomerRepository();
+       
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(Pages.BookingPage);
+            if (string.IsNullOrWhiteSpace(textBoxLogin.Text))
+            {
+                MessageBox.Show("Enter your login");
+                textBoxLogin.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(passwordBoxPassword.Password))
+            {
+                MessageBox.Show("Enter your password");
+                passwordBoxPassword.Focus();
+                return;
+            }
+
+            if (_repository.CheckLogPass(textBoxLogin.Text, passwordBoxPassword.Password))
+            {
+                NavigationService.Navigate(Pages.BookingPage);
+            }
+            else
+            {
+                MessageBox.Show("Incorrect login or password");
+                textBoxLogin.Clear();
+                passwordBoxPassword.Clear();
+                textBoxLogin.Focus();
+                return;
+            }
+            
+        }
+
+        private void buttonRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(Pages.RegistrationPage);
+            
         }
     }
 }
