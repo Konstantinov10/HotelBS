@@ -22,11 +22,13 @@ namespace HotelBookingSystem.UI
     public partial class MainPage : Page
     {
         CustomerRepository _repository;
+        PaymentRepository _repositoryp;
 
-        public MainPage(CustomerRepository rp)
+        public MainPage(CustomerRepository rp,PaymentRepository rppay)
         {
             InitializeComponent();
             _repository = rp;
+            _repositoryp = rppay;
         }
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
@@ -48,7 +50,7 @@ namespace HotelBookingSystem.UI
             if (_repository.CheckLogPass(textBoxLogin.Text, passwordBoxPassword.Password))
             {
                 _repository.CurrentLogin = textBoxLogin.Text;
-                NavigationService.Navigate(new BookingPage(_repository));
+                NavigationService.Navigate(new BookingPage(_repository,_repositoryp));
             }
             else
             {

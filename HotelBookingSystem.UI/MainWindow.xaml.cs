@@ -22,11 +22,12 @@ namespace HotelBookingSystem.UI
     public partial class MainWindow : Window
     {
         private static CustomerRepository repository = new CustomerRepository();
+        private static PaymentRepository repositoryp = new PaymentRepository();
 
         public MainWindow()
         {
             InitializeComponent();
-            frameMain.Navigate(new MainPage(repository));
+            frameMain.Navigate(new MainPage(repository,repositoryp));
         }
     }
 }

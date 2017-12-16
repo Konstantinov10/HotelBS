@@ -23,11 +23,12 @@ namespace HotelBookingSystem.UI
     {
         private Repository _reserv_repo = new Repository();
         private CustomerRepository _repository;
-
-        public BookingPage(CustomerRepository rp)
+        private PaymentRepository _repositoryp;
+        public BookingPage(CustomerRepository rp,PaymentRepository rppay)
         {
             InitializeComponent();
             _repository = rp;
+            _repositoryp = rppay;
             RefreshListBox();
         }
        
@@ -44,19 +45,30 @@ namespace HotelBookingSystem.UI
             string[] spp = new string[listBoxBooking.Items.Count];
             for (int i = 0; i < spp.Length; i++)
                 spp[i] = listBoxBooking.Items[i].ToString();
+            if (spp.Length<4)
+            {
+                MessageBox.Show("Please, enter all information");
+            }
+            else
+            {
+                resinfo.HotelName = spp[0];
+                resinfo.CheckIn = spp[1];
+                resinfo.CheckOut = spp[2];
+                resinfo.RoomType = spp[3];
 
-            resinfo.HotelName = spp[0];
-            resinfo.CheckIn = spp[1];
-            resinfo.CheckOut = spp[2];
-            resinfo.RoomType = spp[3];
+                _reserv_repo.AddReservationInfo(resinfo);
+                _repositoryp.CurrentSum = textBoxSum.Text;
+                NavigationService.Navigate(new CreditCardPage(_reserv_repo, _repository,_repositoryp));
 
-            _reserv_repo.AddReservationInfo(resinfo);
+                RefreshListBox();
+                textBoxSum.Visibility = Visibility.Hidden;
+                comboBoxRooms.IsEnabled = false;
+                buttonDateApproved.IsEnabled = false;
+                buttonApproveAll.IsEnabled = false;
+                
+            }
 
-            NavigationService.Navigate(new CreditCardPage(_reserv_repo, _repository));
-
-            RefreshListBox();
-            textBoxSum.Visibility = Visibility.Hidden;
-            comboBoxRooms.IsEnabled = false;
+            
 
         }       
 
@@ -224,6 +236,8 @@ namespace HotelBookingSystem.UI
             textBoxSum.Visibility = Visibility.Hidden;
             comboBoxRooms.IsEnabled = false;
             RefreshListBox();
+            buttonDateApproved.IsEnabled = false;
+            buttonApproveAll.IsEnabled = false;
 
         }
 

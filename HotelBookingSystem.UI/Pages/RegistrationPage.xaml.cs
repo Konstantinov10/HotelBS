@@ -22,6 +22,7 @@ namespace HotelBookingSystem.UI
     public partial class RegistrationPage : Page
     {
         CustomerRepository _repository;
+        PaymentRepository _repositoryp;
 
         public RegistrationPage(CustomerRepository rp)
         {
@@ -75,7 +76,7 @@ namespace HotelBookingSystem.UI
 
             _repository.AddCustomer(customer);
 
-            NavigationService.Navigate(new MainPage(_repository));
+            NavigationService.Navigate(new MainPage(_repository,_repositoryp));
         }
 
         private void Button_MouseEnter(object sender, RoutedEventArgs e)

@@ -10,6 +10,7 @@ namespace HotelBookingSystem.Data
     {
         private Context context = new Context();
         public string CurrentLogin;
+        
 
         public IEnumerable<Customer> Customers
         {

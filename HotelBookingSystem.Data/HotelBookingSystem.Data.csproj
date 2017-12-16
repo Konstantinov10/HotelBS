@@ -52,6 +52,7 @@
     <Compile Include="Migrations\201712161505275_Mig5.Designer.cs">
       <DependentUpon>201712161505275_Mig5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository\PaymentRepository.cs" />
     <Compile Include="Repository\HotelRepository.cs" />
     <Compile Include="Migrations\201712151308434_Mig3.cs" />
     <Compile Include="Migrations\201712151308434_Mig3.Designer.cs">

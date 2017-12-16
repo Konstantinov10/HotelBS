@@ -24,10 +24,12 @@ namespace HotelBookingSystem.UI
         CreditCardRepository _card_rp = new CreditCardRepository();
         Repository _reserv_rp;
         CustomerRepository _repository;
+        PaymentRepository _repositoryp;
 
-        public CreditCardPage(Repository rs, CustomerRepository rp)
+        public CreditCardPage(Repository rs, CustomerRepository rp, PaymentRepository rppay)
         {
             InitializeComponent();
+            _repositoryp = rppay;
             _reserv_rp = rs;
             _repository = rp;
         }
@@ -41,8 +43,13 @@ namespace HotelBookingSystem.UI
             creditCard.CVV = textBoxCardCVV.Text;
 
             _card_rp.AddCreditCard(creditCard);
-           
-            NavigationService.Navigate(new BookingPage(_repository));
+
+            Payment p = new Payment();
+            string st = _repositoryp.CurrentSum;
+            st = st.Substring(0, st.Length - 1);
+            p.TotalSum = Convert.ToDouble(st);
+            _repositoryp.AddPayment(p);
+            NavigationService.Navigate(new BookingPage(_repository,_repositoryp));
             
         }
 
