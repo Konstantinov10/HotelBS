@@ -31,24 +31,22 @@ namespace HotelBookingSystem.Data.Migrations
             Room[] rooms =
          {
                 new Room{
-                    Type = "Family",                   
-                    Status = "Free",
-                    Price = 50,
-                   Customers = new List<Customer> {  },
-    },
-                    new Room{
-                    Type = "Single",                    
-                    Status = "Busy",
-                    Price = 20,
-                   Customers = new List<Customer> { customers[2]},
+                    Type = "Family",  
+                    Price=50,                 
+                    NumberOfRooms=50,
                     },
 
-                      new Room{
-                    Type = "Lux",                   
-                    Status = "Busy",
+                new Room{
+                    Type = "Single",
+                    Price = 20,
+                    NumberOfRooms=50,
+                    },
+
+                new Room{
+                    Type = "Lux",                                   
                     Price = 100,
-                   Customers = new List<Customer> { customers[0], customers[1]},
-                    }
+                    NumberOfRooms=50,
+                   }
             };
 
             //ReservationInfo[] reservationinfos =

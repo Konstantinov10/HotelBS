@@ -10,8 +10,8 @@
 
     <Grid>
         <TextBox x:Name="textBoxLogin" HorizontalAlignment="Left" Height="23" Margin="60,75,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="187"/>
-        <Button x:Name="buttonLogin" Content="Log in" HorizontalAlignment="Left" Margin="60,148,0,0" VerticalAlignment="Top" Width="75" Click="buttonLogin_Click"/>
-        <Button x:Name="buttonRegistration" Content="Registration" HorizontalAlignment="Left" Margin="172,148,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegistration_Click"/>
+        <Button x:Name="buttonLogin" Content="Log in" HorizontalAlignment="Left" Margin="60,148,0,0" VerticalAlignment="Top" Width="75" Click="buttonLogin_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
+        <Button x:Name="buttonRegistration" Content="Registration" HorizontalAlignment="Left" Margin="172,148,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegistration_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
         <PasswordBox x:Name="passwordBoxPassword" HorizontalAlignment="Left" Margin="60,116,0,0" VerticalAlignment="Top" Width="187"/>
     </Grid>
 </Page>

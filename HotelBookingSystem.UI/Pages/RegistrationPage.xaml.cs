@@ -76,5 +76,19 @@ namespace HotelBookingSystem.UI
 
             NavigationService.Navigate(Pages.MainPage);
         }
+
+        private void Button_MouseEnter(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            button.FontSize = 14;
+        }
+
+        private void Button_MouseLeave(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            button.FontSize = 12;
+        }
+
+       
     }
 }

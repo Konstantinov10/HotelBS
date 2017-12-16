@@ -55,33 +55,18 @@ namespace HotelBookingSystem.UI
 
             RefreshListBox();
 
-        }
+        }       
 
-        private void buttonHotel3_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender,RoutedEventArgs e)
         {
             RefreshListBox();
 
-            listBoxBooking.Items.Add("Hilton Dubai");
-            textBoxSum.Text = "4";
-
-        }
-
-        private void buttonHotel1_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshListBox();
-
-            listBoxBooking.Items.Add("Feduk Budapest");
-            textBoxSum.Text = "2";
-
-        }
-
-        private void buttonHotel2_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshListBox();
-
-            listBoxBooking.Items.Add("Mariott Madrid");
-            textBoxSum.Text = "3";
-
+            var button = sender as Button;
+            int stars;
+            int.TryParse(button.Uid, out stars);
+            textBoxSum.Text = stars.ToString();
+            listBoxBooking.Items.Add(button.Tag.ToString());
+          
         }
 
         private void buttonDateApproved_Click(object sender, RoutedEventArgs e)
@@ -139,42 +124,30 @@ namespace HotelBookingSystem.UI
             
         }
 
-        private void FamilyRoom_Selected(object sender, RoutedEventArgs e)
+        private void Room_Selected(object sender,RoutedEventArgs e)
         {
-            listBoxBooking.Items.Add("Family - 4 per");
-
-            long p = Convert.ToInt64(textBoxSum.Text) * 50;
+            var room = sender as ComboBoxItem;
+            int price;
+            int.TryParse(room.Uid, out price);
+            long p = Convert.ToInt64(textBoxSum.Text) * price;
             textBoxSum.Text = p.ToString();
+            listBoxBooking.Items.Add(room.Tag.ToString());
 
-        }
+        }      
 
-        private void SingleRoom_Selected(object sender, RoutedEventArgs e)
+       private void Button_MouseEnter(object sender,RoutedEventArgs e)
         {
-            listBoxBooking.Items.Add("Single - 1 per");
-
-            long p = Convert.ToInt64(textBoxSum.Text) * 20;
-            textBoxSum.Text = p.ToString() + "$";
+            var button = sender as Button;
+            button.FontSize = 14;
         }
 
-        private void LuxRoom1_Selected(object sender, RoutedEventArgs e)
+        private void Button_MouseLeave(object sender, RoutedEventArgs e)
         {
-            listBoxBooking.Items.Add("Lux - 1 per");
-
-            long p = Convert.ToInt64(textBoxSum.Text) * 100;
-            textBoxSum.Text = p.ToString() + "$";
+            var button = sender as Button;
+            button.FontSize = 12;
         }
 
-        private void LuxRoom2_Selected(object sender, RoutedEventArgs e)
-        {
-            listBoxBooking.Items.Add("Lux - 2 per");
-
-            long p = Convert.ToInt64(textBoxSum.Text) * 200;
-            textBoxSum.Text = p.ToString() + "$";
-        }
-
-        private void datePickerCheckin_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {          
-        }
+        
     }
 }
     

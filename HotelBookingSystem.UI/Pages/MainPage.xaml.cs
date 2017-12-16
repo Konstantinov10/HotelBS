@@ -57,7 +57,7 @@ namespace HotelBookingSystem.UI
                 textBoxLogin.Focus();
                 return;
             }
-            
+
         }
 
         private void buttonRegistration_Click(object sender, RoutedEventArgs e)
@@ -65,5 +65,19 @@ namespace HotelBookingSystem.UI
             NavigationService.Navigate(Pages.RegistrationPage);
             
         }
+
+        private void Button_MouseEnter(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            button.FontSize = 14;
+        }
+
+        private void Button_MouseLeave(object sender,RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            button.FontSize = 12;
+        }
+
+      
     }
 }

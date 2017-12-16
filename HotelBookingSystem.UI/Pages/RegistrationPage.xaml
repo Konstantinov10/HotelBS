@@ -13,7 +13,7 @@
         <TextBox x:Name="textBoxLastName" HorizontalAlignment="Left" Height="23" Margin="156,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxLogin" HorizontalAlignment="Left" Height="23" Margin="86,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="23" Margin="86,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="buttonRegistration" Content="Button" HorizontalAlignment="Left" Margin="112,256,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegistration_Click"/>
+        <Button x:Name="buttonRegistration" Content="Button" HorizontalAlignment="Left" Margin="112,256,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegistration_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
         <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" Margin="23,17,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy" Content="Last Name" HorizontalAlignment="Left" Margin="156,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.822,0.671"/>
         <Label x:Name="label_Copy1" Content="Login" HorizontalAlignment="Left" Margin="86,75,0,0" VerticalAlignment="Top"/>
