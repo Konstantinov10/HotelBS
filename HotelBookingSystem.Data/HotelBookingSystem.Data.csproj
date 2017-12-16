@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Migrations\201712161505275_Mig5.cs" />
+    <Compile Include="Migrations\201712161505275_Mig5.Designer.cs">
+      <DependentUpon>201712161505275_Mig5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repository\HotelRepository.cs" />
     <Compile Include="Migrations\201712151308434_Mig3.cs" />
     <Compile Include="Migrations\201712151308434_Mig3.Designer.cs">
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712151536569_Mig4.resx">
       <DependentUpon>201712151536569_Mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712161505275_Mig5.resx">
+      <DependentUpon>201712161505275_Mig5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

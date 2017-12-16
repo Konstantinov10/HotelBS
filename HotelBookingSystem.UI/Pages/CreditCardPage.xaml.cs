@@ -21,11 +21,15 @@ namespace HotelBookingSystem.UI
     /// </summary>
     public partial class CreditCardPage : Page
     {
-        CreditCardRepository _repository = new CreditCardRepository();
-        public CreditCardPage()
+        CreditCardRepository _card_rp = new CreditCardRepository();
+        Repository _reserv_rp;
+        CustomerRepository _repository;
+
+        public CreditCardPage(Repository rs, CustomerRepository rp)
         {
             InitializeComponent();
-
+            _reserv_rp = rs;
+            _repository = rp;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,9 +40,9 @@ namespace HotelBookingSystem.UI
             creditCard.Date = textBoxCardDate.Text;
             creditCard.CVV = textBoxCardCVV.Text;
 
-            _repository.AddCreditCard(creditCard);
+            _card_rp.AddCreditCard(creditCard);
            
-            NavigationService.Navigate(Pages.BookingPage);
+            NavigationService.Navigate(new BookingPage(_repository));
             
         }
 

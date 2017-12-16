@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelBookingSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,23 @@ namespace HotelBookingSystem.UI
     /// </summary>
     public partial class AccountPage : Page
     {
-        public AccountPage()
+        CustomerRepository _repository;
+
+        public AccountPage(CustomerRepository rp)
         {
             InitializeComponent();
+            _repository = rp;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {                
+        }
+
+        private void dataGridOrders_Loaded(object sender, RoutedEventArgs e)
+        {
+            textBlockFirstName.Text = _repository.AccountFirstName(_repository.CurrentLogin);
+            textBlockLastName.Text = _repository.AccountLastName(_repository.CurrentLogin);
+            textBlockEmail.Text = _repository.AccountEmail(_repository.CurrentLogin);
         }
     }
 }

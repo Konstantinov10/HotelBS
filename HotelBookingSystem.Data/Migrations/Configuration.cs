@@ -24,28 +24,40 @@ namespace HotelBookingSystem.Data.Migrations
 
             Hotel[] hotels =
          {
-                new Hotel{ Name = "Hilton Dubai",Location="Dubai",Stars=5},
-               
+                new Hotel{ Name = "Hilton Dubai",Location="Dubai",Stars=4},
+                new Hotel{ Name = "Feduk Budapest",Location="Budapest",Stars=2},
+                new Hotel{ Name = "Mariott Madrid",Location="Madrid",Stars=3},
             };
+            
 
             Room[] rooms =
          {
                 new Room{
                     Type = "Family",  
                     Price=50,                 
-                    NumberOfRooms=50,
+                    Amount=50,
+                    Hotels= new List<Hotel>{hotels[0],hotels[1],hotels[2]}
                     },
 
                 new Room{
                     Type = "Single",
                     Price = 20,
-                    NumberOfRooms=50,
+                    Amount=50,
+                    Hotels= new List<Hotel>{hotels[0],hotels[1],hotels[2]}
                     },
 
                 new Room{
                     Type = "Lux",                                   
                     Price = 100,
-                    NumberOfRooms=50,
+                    Amount=50,
+                    Hotels= new List<Hotel>{hotels[0],hotels[1],hotels[2]}
+                   },
+
+                new Room{
+                    Type = "Presidental",
+                    Price = 200,
+                    Amount=50,
+                    Hotels= new List<Hotel>{hotels[0],hotels[1],hotels[2]}
                    }
             };
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelBookingSystem.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,12 @@ namespace HotelBookingSystem.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static CustomerRepository repository = new CustomerRepository();
+
         public MainWindow()
         {
             InitializeComponent();
-            frameMain.Navigate(new MainPage());
+            frameMain.Navigate(new MainPage(repository));
         }
     }
 }

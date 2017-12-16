@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:HotelBookingSystem.UI"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="AccountPage">
+      Title="AccountPage" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="dataGridOrders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="216"/>
+        <DataGrid x:Name="dataGridOrders" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="216" Loaded="dataGridOrders_Loaded"/>
         <TextBlock x:Name="textBlockFirstName" HorizontalAlignment="Left" Margin="232,21,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlockLastName" HorizontalAlignment="Left" Margin="232,50,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlockEmail" HorizontalAlignment="Left" Margin="232,78,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
