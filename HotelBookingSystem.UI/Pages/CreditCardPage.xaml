@@ -20,8 +20,9 @@
         <Label Content="" HorizontalAlignment="Left" Margin="22,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.002,0.078"/>
         <Label Content="" HorizontalAlignment="Left" Margin="22,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.002,0.078"/>
         <Label Content="CVV" HorizontalAlignment="Left" Margin="77,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.002,0.078" Foreground="#FFFBEFEF"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="175,126,0,0" TextWrapping="Wrap" Text="CARD NUMBER" VerticalAlignment="Top" Foreground="#FFF7F6F6" Width="178" FontSize="20"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="163,117,0,0" TextWrapping="Wrap" Text="8-digit CARD NUMBER " VerticalAlignment="Top" Foreground="#FFF7F6F6" Width="235" FontSize="20"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="30,227,0,0" TextWrapping="Wrap" Text="NAME" VerticalAlignment="Top" Foreground="#FFF7EFEF"/>
+        <Label Content="XXXX . XX . XX" HorizontalAlignment="Left" Margin="315,220,0,0" VerticalAlignment="Top" Width="75" FontSize="10" Foreground="#FFFBF2F2"/>
 
     </Grid>
 </Page>
