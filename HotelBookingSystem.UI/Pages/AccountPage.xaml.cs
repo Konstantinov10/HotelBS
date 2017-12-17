@@ -27,10 +27,11 @@ namespace HotelBookingSystem.UI
         {
             InitializeComponent();
             _repository = rp;
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
-        {                
+        {       
         }
 
         private void dataGridOrders_Loaded(object sender, RoutedEventArgs e)
@@ -38,6 +39,8 @@ namespace HotelBookingSystem.UI
             textBlockFirstName.Text = _repository.AccountFirstName(_repository.CurrentLogin);
             textBlockLastName.Text = _repository.AccountLastName(_repository.CurrentLogin);
             textBlockEmail.Text = _repository.AccountEmail(_repository.CurrentLogin);
+            dataGridOrders.ItemsSource = _repository.PaymentsHistory();
+            _repository.CurrentName = textBlockFirstName.Text+" "+textBlockLastName.Text;
         }
     }
 }

@@ -18,8 +18,6 @@ namespace HotelBookingSystem.Data
 
         }
 
-       
-
         public void AddReservationInfo(ReservationInfo reservationInfo)
         {
 

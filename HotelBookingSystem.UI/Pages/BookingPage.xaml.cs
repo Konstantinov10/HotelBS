@@ -202,16 +202,22 @@ namespace HotelBookingSystem.UI
             button.FontSize = 14;
         }
 
+
+
         private void Button_MouseLeave(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             button.FontSize = 12;
         }
 
+
+
         private void buttonAccount_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AccountPage(_repository));
         }
+
+
 
         private void buttonApproveAll_Click(object sender, RoutedEventArgs e)
         {

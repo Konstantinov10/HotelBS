@@ -22,7 +22,7 @@ namespace HotelBookingSystem.UI
     public partial class MainWindow : Window
     {
         private static CustomerRepository repository = new CustomerRepository();
-        private static PaymentRepository repositoryp = new PaymentRepository();
+        private static PaymentRepository repositoryp = new PaymentRepository(); // че
 
         public MainWindow()
         {
