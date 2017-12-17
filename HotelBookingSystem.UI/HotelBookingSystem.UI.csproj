@@ -147,7 +147,9 @@
   <ItemGroup>
     <Resource Include="Resources\горы.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\55.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\citi-simplicity-card-1.jpg" />
   </ItemGroup>
@@ -159,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Buddha-Bar_Hotel_Budapest_Klotild_Palace-720x340.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DSC08750.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

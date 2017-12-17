@@ -54,7 +54,7 @@ namespace HotelBookingSystem.Data
         {
             var payInfo = from card in CreditCards
                           join payment in Payments on card.ID equals payment.ID
-                          where card.CardHolder == CurrentName
+                         // where card.CardHolder == CurrentName 
                           select new PaymentHistory ()
                           {
 
@@ -68,7 +68,7 @@ namespace HotelBookingSystem.Data
             return payInfo.ToList<PaymentHistory>();
         }
 
-
+       
         public void AddCustomer(Customer customer)
         {
 

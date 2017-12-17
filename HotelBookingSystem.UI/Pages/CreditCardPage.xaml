@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:HotelBookingSystem.UI"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="500"
-      Title="CreditCardPage">
+      Title="CreditCardPage" IsManipulationEnabled="True" MaxHeight="300" MaxWidth="500">
+
     <Page.Background>
         <ImageBrush ImageSource="/Resources/citi-simplicity-card-1.jpg" />
     </Page.Background>

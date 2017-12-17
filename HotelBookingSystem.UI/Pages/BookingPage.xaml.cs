@@ -30,6 +30,7 @@ namespace HotelBookingSystem.UI
             _repository = rp;
             _repositoryp = rppay;
             RefreshListBox();
+           
         }
        
 
@@ -89,94 +90,108 @@ namespace HotelBookingSystem.UI
 
         private void buttonDateApproved_Click(object sender, RoutedEventArgs e)
         {
-
-            string[] spp = new string[listBoxBooking.Items.Count];
-            for (int i = 0; i < spp.Length; i++)
-                spp[i] = listBoxBooking.Items[i].ToString();
-
-            //if(spp[1]!=null && spp[2]!=null)
-            //{
-            //    spp[1] = null;
-            //    spp[2] = null;
-            //    RefreshListBox();
-            //}
-          
             
-
-            long time = 0;
-
-            DateTime dt1 = new DateTime();
-            DateTime dt2 = new DateTime();
-           
-            string st1 = datePickerCheckin.Text;
-            string st2 = datePickerCheckout.Text;
-
-            dt1 = Convert.ToDateTime(st1);
-            dt2 = Convert.ToDateTime(st2);
+                string[] spp = new string[listBoxBooking.Items.Count];
+                for (int i = 0; i < spp.Length; i++)
+                    spp[i] = listBoxBooking.Items[i].ToString();
 
 
-            if (dt2.Ticks < dt1.Ticks)
+
+
+                long time = 0;
+
+                
+
+                string st1 = datePickerCheckin.Text;
+                string st2 = datePickerCheckout.Text;
+            if ( string.IsNullOrWhiteSpace(datePickerCheckin.Text) || string.IsNullOrWhiteSpace(datePickerCheckout.Text))
             {
+                MessageBox.Show("Please, enter two dates!");
                 datePickerCheckin.Text = null;
                 datePickerCheckout.Text = null;
-                MessageBox.Show("Incorrect Date!");
+                listBoxBooking.ItemsSource = null;
+                st1 = null;
+                st2 = null;
+               
             }
             else
             {
-                if (spp.Length<1)
+                DateTime dt1 = new DateTime();
+                DateTime dt2 = new DateTime();
+                dt1 = Convert.ToDateTime(st1);
+                dt2 = Convert.ToDateTime(st2);
+                if (dt2.Ticks<DateTime.Now.Ticks || dt1.Ticks < DateTime.Now.Ticks)
+                {
+                    MessageBox.Show("Time travelling is not possible yet:)");
+                    datePickerCheckin.Text = null;
+                    datePickerCheckout.Text = null;
+                    listBoxBooking.ItemsSource = null;
+                    st1 = null;
+                    st2 = null;
+                }
+
+                if (dt2.Ticks < dt1.Ticks)
                 {
                     datePickerCheckin.Text = null;
                     datePickerCheckout.Text = null;
-                    MessageBox.Show("Please choose the Hotel!");
-                  
+                    MessageBox.Show("Incorrect Date!");
                 }
                 else
                 {
-                    if (listBoxBooking.Items != null)
+                    if (spp.Length < 1)
                     {
-                        comboBoxRooms.IsEnabled = true;
-                        buttonApproveAll.IsEnabled = true;
-                        time = dt2.Ticks - dt1.Ticks;
+                        datePickerCheckin.Text = null;
+                        datePickerCheckout.Text = null;
+                        MessageBox.Show("Please choose the Hotel!");
 
-                        DateTime time2 = new DateTime(time);
-                        long countDays = time2.Day;
-
-                        listBoxBooking.Items.Add(st1);
-                        listBoxBooking.Items.Add(st2);
-
-
-                        if (textBoxSum.Text == "2")
-                        {
-                            textBoxSum.Text = (2 * countDays).ToString();
-
-                        }
-                        if (textBoxSum.Text == "3")
-                        {
-                            textBoxSum.Text = (3 * countDays).ToString();
-
-                        }
-                        else
-                        {
-                            textBoxSum.Text = (4 * countDays).ToString();
-
-                        }
                     }
-                  
+                    else
+                    {
+                        if (listBoxBooking.Items != null)
+                        {
+                            comboBoxRooms.IsEnabled = true;
+                            buttonApproveAll.IsEnabled = true;
+                            time = dt2.Ticks - dt1.Ticks;
+
+                            DateTime time2 = new DateTime(time);
+                            long countDays = time2.Day;
+
+                            listBoxBooking.Items.Add(st1);
+                            listBoxBooking.Items.Add(st2);
+
+
+                            if (textBoxSum.Text == "2")
+                            {
+                                textBoxSum.Text = (2 * countDays).ToString();
+
+                            }
+                            if (textBoxSum.Text == "3")
+                            {
+                                textBoxSum.Text = (3 * countDays).ToString();
+
+                            }
+                            else
+                            {
+                                textBoxSum.Text = (4 * countDays).ToString();
+
+                            }
+                        }
+
+                    }
+
                 }
-              
+
+
+
+
+
+
+
+
+                datePickerCheckin.Text = null;
+                datePickerCheckout.Text = null;
+
             }
-
-           
-            
-           
-           
-
-          
-
-            datePickerCheckin.Text=null;
-            datePickerCheckout.Text = null;
-
-            
             
         }
 
@@ -247,7 +262,7 @@ namespace HotelBookingSystem.UI
 
         }
 
-       
+
     }
 }
     

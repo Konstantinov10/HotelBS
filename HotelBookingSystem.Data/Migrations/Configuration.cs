@@ -61,6 +61,8 @@ namespace HotelBookingSystem.Data.Migrations
                    }
             };
 
+
+
             //ReservationInfo[] reservationinfos =
             //    {
             //    new ReservationInfo
