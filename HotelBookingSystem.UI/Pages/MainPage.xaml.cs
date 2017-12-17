@@ -29,6 +29,10 @@ namespace HotelBookingSystem.UI
             InitializeComponent();
             _repository = rp;
             _repositoryp = rppay;
+            textBoxLogin.Text = "LogIn";
+            textBoxLogin.Foreground = Brushes.LightGray;
+            passwordBoxPassword.Password = "Password";
+            passwordBoxPassword.Foreground = Brushes.LightGray;
         }
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
@@ -81,6 +85,16 @@ namespace HotelBookingSystem.UI
             button.FontSize = 12;
         }
 
-      
+        private void textBoxLogin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            textBoxLogin.Text = null;
+            textBoxLogin.Foreground = Brushes.Black;
+        }
+
+        private void passwordBoxPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            passwordBoxPassword.Password = null;
+            passwordBoxPassword.Foreground = Brushes.Black;
+        }
     }
 }

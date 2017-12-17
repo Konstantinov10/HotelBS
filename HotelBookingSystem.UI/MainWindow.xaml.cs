@@ -26,6 +26,7 @@ namespace HotelBookingSystem.UI
 
         public MainWindow()
         {
+            
             InitializeComponent();
             frameMain.Navigate(new MainPage(repository,repositoryp));
         }

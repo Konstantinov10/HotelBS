@@ -75,7 +75,7 @@ namespace HotelBookingSystem.UI
             customer.Email = textBoxEmail.Text;
 
             _repository.AddCustomer(customer);
-
+            MessageBox.Show("Registrated successfully!");
             NavigationService.Navigate(new MainPage(_repository,_repositoryp));
         }
 

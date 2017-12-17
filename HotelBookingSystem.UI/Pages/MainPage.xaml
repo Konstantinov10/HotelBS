@@ -5,15 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HotelBookingSystem.UI"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="MainPage" FontSize="{Binding CurrentPage}">
+      d:DesignHeight="300" d:DesignWidth="500" 
+      Title="MainPage" FontSize="{Binding CurrentPage}" MaxHeight="300" MaxWidth="500">
+    
     <Page.Background>
         <ImageBrush ImageSource="/Resources/DSC08750.JPG" />
     </Page.Background>
-    <Grid  >
-        <TextBox x:Name="textBoxLogin" HorizontalAlignment="Left" Height="23" Margin="60,75,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="187"/>
-        <Button x:Name="buttonLogin" Content="Log in" HorizontalAlignment="Left" Margin="60,148,0,0" VerticalAlignment="Top" Width="75" Click="buttonLogin_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-        <Button x:Name="buttonRegistration" Content="Registration" HorizontalAlignment="Left" Margin="172,148,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegistration_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-        <PasswordBox x:Name="passwordBoxPassword" HorizontalAlignment="Left" Margin="60,116,0,0" VerticalAlignment="Top" Width="187"/>
+    <Grid Name="Grid1"  Height="300" Width="500" >
+        <TextBox x:Name="textBoxLogin" HorizontalAlignment="Left" Height="23" Margin="307,60,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="163"  FontSize="{Binding ElementName=Grid1, Path=Background}" RenderTransformOrigin="0.871,0.604" GotFocus="textBoxLogin_GotFocus" />
+        <Button x:Name="buttonLogin" Content="Log In" HorizontalAlignment="Left" Margin="307,133,0,0" VerticalAlignment="Top" Width="75" Click="buttonLogin_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Height="30"/>
+        <Button x:Name="buttonRegistration" Content="Registration" HorizontalAlignment="Left" Margin="395,133,0,0" VerticalAlignment="Top" Width="75" Click="buttonRegistration_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" Height="30"/>
+        <PasswordBox x:Name="passwordBoxPassword" HorizontalAlignment="Left" Margin="307,88,0,0" VerticalAlignment="Top" Width="163" Height="23" GotFocus="passwordBoxPassword_GotFocus"/>
     </Grid>
 </Page>

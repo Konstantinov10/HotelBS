@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:HotelBookingSystem.UI"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="500"
-      Title="BookingPage">
+      Title="BookingPage" MaxHeight="300" MaxWidth="500">
     <Page.Background>
         <ImageBrush ImageSource="/Resources/горы.jpg" />
     </Page.Background>
@@ -44,7 +44,7 @@
         <TextBox x:Name="textBoxSum" HorizontalAlignment="Left" Height="23" Margin="224,259,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
         <Button Name="buttonPH" Content="Payment History" HorizontalAlignment="Left" Margin="54,266,0,0" VerticalAlignment="Top" Width="121" Click="buttonAccount_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
         <Button x:Name="buttonApproveAll" Content="Approve ALL" HorizontalAlignment="Left" Margin="100,234,0,0" VerticalAlignment="Top" Width="75" Click="buttonApproveAll_Click" IsEnabled="False" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-        <Button x:Name="buttonClear" Content="Clear" HorizontalAlignment="Left" Margin="224,237,0,0" VerticalAlignment="Top" Width="75" Click="buttonClear_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
+        <Button x:Name="buttonClear" Content="Clear" HorizontalAlignment="Left" Margin="224,242,0,0" VerticalAlignment="Top" Width="75" Click="buttonClear_Click" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
 
     </Grid>
 </Page>
